@@ -29,10 +29,12 @@ public class Principal {
 			controller.salvar(c2);
 		} catch ( Exception e) {
 			System.out.println(e.getMessage());
+			System.out.println("-----------------------------------");
 		}
 
 		for (Colaborador c: controller.listar()) {
 			System.out.println(c.toString());
+			System.out.println("-----------------------------------");
 		}
 	}
 
@@ -51,6 +53,7 @@ public class Principal {
 		}
 		for (Veiculo v: controller.listar()) {
 			System.out.println(v.toString());
+			System.out.println("---------------------------");
 		}
 	}
 
@@ -68,6 +71,7 @@ public class Principal {
 			controller.registrarChamado(ch1);
 		} catch ( Exception e) {
 			System.out.println(e.getMessage());
+			System.out.println("---------------------------");
 		}
 	}
 }

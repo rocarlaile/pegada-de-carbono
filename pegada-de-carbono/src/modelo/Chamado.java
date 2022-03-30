@@ -18,6 +18,8 @@ public class Chamado {
 		this.colaborador = colaborador;
 		this.veiculo = veiculo;
 	}
+	public Chamado(){
+	}
 
 	public  int  getId () {
 		return id;

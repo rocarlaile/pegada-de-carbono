@@ -16,6 +16,9 @@ public class Veiculo {
 		this.veiculoDisponivel = veiculoDisponivel;
 		this.consumoKmLitro = consumoKmLitro;
 	}
+	
+	public Veiculo(){
+	}
 
 	public  int  getId () {
 		return id;

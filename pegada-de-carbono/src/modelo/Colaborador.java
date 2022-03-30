@@ -1,5 +1,7 @@
 package modelo;
 
+
+
 public class Colaborador {
 	private int id;
 	private String nome;
@@ -22,6 +24,12 @@ public class Colaborador {
 		this.telefone = telefone;
 		this.cnhB = cnhB;
 	}
+	
+	public Colaborador(){
+	}
+
+
+
 
 
 	public  int  getId () {
