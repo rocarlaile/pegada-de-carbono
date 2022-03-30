@@ -1,11 +1,11 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
+
 import modelo.Chamado;
 import util.ConnectionUtil;
 
@@ -20,26 +20,29 @@ public  class  ChamadoDao {
 		}
 		return instance;
 	}
+	
 
-	public  List<Chamado>  registrarChamado ( Chamado  chamado ) {
-		List<Chamado> listaChamados = new ArrayList<>();
+	public void registrarChamado ( Chamado  chamado ) {
+		
 		try {
-			String sql = "select * from chamado";
-			Statement stmt = con.createStatement();
-			ResultSet rs = stmt.executeQuery(sql);
-			while (rs.next()) {
+			String sql = "insert into chamado (dataChamado, colaborador, veiculo, distanciaPercrrida, id) values (?, ?, ?, ?, ?)"; 
+			PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			
+			pstmt.setDate(1, java.sql.Date.valueOf(chamado.getDataChamado()));
+			pstmt.setInt(2, chamado.getColaborador().getId());
+			pstmt.setInt(3, chamado.getVeiculo().getId());
+			pstmt.setDouble(2, chamado.getDistanciaPercorrida());
+			
+			int key = pstmt.executeUpdate();
+			if (key > 0) {
+				ResultSet rs = pstmt.getGeneratedKeys();
+				rs.next();
+				rs.getInt(1);
 				
-				Chamado ch = new Chamado();
-				ch.setId(rs.getInt("id"));
-				ch.setEnderecoAtendimento(rs.getString("enderecoAtendimento"));
-				ch.setDistanciaPercorrida(rs.getDouble("distanciaPercorrida"));
-				ch.setVeiculo(null);
-				ch.setColaborador(null);
-				listaChamados.add(ch); 
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return listaChamados;
+
 	}
 }
