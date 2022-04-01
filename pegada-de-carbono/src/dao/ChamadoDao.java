@@ -25,24 +25,31 @@ public  class  ChamadoDao {
 	public void registrarChamado ( Chamado  chamado ) {
 		
 		try {
-			String sql = "insert into chamado (dataChamado, colaborador, veiculo, distanciaPercrrida, id) values (?, ?, ?, ?, ?)"; 
+			
+			String sql = "insert into chamado (id, dataChamado, endereco, distanciaPercorrida, motorista, carro) values (?, ?, ?, ?, ?, ?)"; 
+		
 			PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
-			
-			pstmt.setDate(1, java.sql.Date.valueOf(chamado.getDataChamado()));
-			pstmt.setInt(2, chamado.getColaborador().getId());
-			pstmt.setInt(3, chamado.getVeiculo().getId());
-			pstmt.setDouble(2, chamado.getDistanciaPercorrida());
-			
+		
+			pstmt.setInt(1, chamado.getId());
+			pstmt.setDate(2, java.sql.Date.valueOf(chamado.getDataChamado()));
+			pstmt.setString(3, chamado.getEnderecoAtendimento());
+			pstmt.setDouble(4, chamado.getDistanciaPercorrida());
+			pstmt.setString(5, chamado.getColaborador().getNome());
+			pstmt.setString(6, chamado.getVeiculo().getPlaca());
+		
 			int key = pstmt.executeUpdate();
 			if (key > 0) {
 				ResultSet rs = pstmt.getGeneratedKeys();
 				rs.next();
 				rs.getInt(1);
-				
+						
+					}
+			} catch (SQLException e) {
+	e.printStackTrace();
+
 			}
-		} catch (SQLException e) {
-			e.printStackTrace();
+
+			}
 		}
 
-	}
-}
+

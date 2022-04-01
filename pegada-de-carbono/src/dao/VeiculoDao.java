@@ -25,13 +25,14 @@ public  class  VeiculoDao {
 
 	public  void  salvar ( Veiculo  veiculo ) {
 		try {
-			String sql = "Insert into veiculo (id, placa, modelo, ano, veiculoDisponivel, consumoKmLitro (?, ?, ?, ?, ?,?)";
+			String sql = "Insert into veiculo (id, placa, modelo, ano, consumoKmLitro, veiculoDisponivel (?, ?, ?, ?, ?,?)";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, veiculo.getId());
 			pstmt.setString(2, veiculo.getPlaca());
-			pstmt.setInt(3, veiculo.getAno());
-			pstmt.setString(4, String.valueOf (veiculo.getVeiculoDisponivel()));
-			pstmt.setString(5, veiculo.getConsumoKmLitro());
+			pstmt.setString(3, veiculo.getModelo());
+			pstmt.setInt(4, veiculo.getAno());
+			pstmt.setFloat(5, veiculo.getConsumoKmLitro());
+			pstmt.setString(6, String.valueOf (veiculo.getVeiculoDisponivel()));
 			pstmt.execute();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -41,12 +42,13 @@ public  class  VeiculoDao {
 
 	public  void  atualizado ( Veiculo  veiculo ) {
 		try {
-			String sql = "update veiculo set placa = ?, modelo = ?, ano = ?, consumoKmLitro = ? where id = ?";
+			String sql = "update veiculo set placa = ?, modelo = ?, ano = ?, consumoKmLitro = ?, veiculoDisponivel where id = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, veiculo.getPlaca());
 			pstmt.setString(2, veiculo.getModelo());
 			pstmt.setInt(3, veiculo.getAno());
-			pstmt.setString(4, veiculo.getConsumoKmLitro());
+			pstmt.setFloat(4, veiculo.getConsumoKmLitro());
+			pstmt.setString(5, veiculo.getVeiculoDisponivel());
 			pstmt.setInt(5, veiculo.getId());
 			pstmt.executeUpdate();	
 		} catch (SQLException e) {
@@ -58,7 +60,7 @@ public  class  VeiculoDao {
 		try {
 			String sql = "delete from veiculo where id = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(idVeiculo, idVeiculo);
+			pstmt.setInt(1, idVeiculo);
 			pstmt.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -78,7 +80,8 @@ public  class  VeiculoDao {
 				v.setPlaca(rs.getString("placa"));
 				v.setModelo(rs.getString("modelo"));
 				v.setAno(rs.getInt("ano"));
-				v.setConsumoKmLitro(rs.getString("Consumo"));
+				v.setConsumoKmLitro(rs.getFloat("consumoKm"));
+				v.setVeiculoDisponivel(rs.getString("veiculo disponível"));
 				listaVeiculos.add(v);
 			}
 		} catch (SQLException e) {

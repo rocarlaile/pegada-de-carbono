@@ -18,10 +18,10 @@ public class Principal {
 	}
 
 	public  static  void  testeColaborador () {
-		Colaborador c1 =  new  Colaborador ( 1, " Ada Lovelace ", " Rua dos Programadores - número 1010 ", " 045888555-74 ", " Gerente ", 15000.00, " 48 95555-8888 ", 'S');
+		Colaborador c1 =  new  Colaborador ( 1, " Ada Lovelace ", " Rua dos Programadores - número 1010 ", " 045888555-74 ", " Gerente ", 15000.00, " 48 95555-8888 ", "SIM");
 
 
-		Colaborador c2 =  new  Colaborador ( 2 , " Carolina Shaw " , " Rua dos Sonhos - número 21 " , " 035218555-43 " , " Coordenadora " , 12000.00 , " 48 93575-8258 " , 'S');
+		Colaborador c2 =  new  Colaborador ( 2 , " Carolina Shaw " , " Rua dos Sonhos - número 21 " , " 035218555-43 " , " Coordenadora " , 12000.00 , " 48 93575-8258 " , "SIM");
 		
 		ColaboradorController controller =  new  ColaboradorController ();
 		try {
@@ -39,9 +39,9 @@ public class Principal {
 	}
 
 	public  static  void  testeVeiculo () {
-		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , 'S' , " 13,9 km/l " );
+		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , "SIM" , 13.9f );
 		
-		Veiculo v2 =  new  Veiculo ( 2 , " OXM2754 " , " Chevrolet Onix " , 2021 , 'S' , " 15,7 km/l " );
+		Veiculo v2 =  new  Veiculo ( 2 , " OXM2754 " , " Chevrolet Onix " , 2021 , "SIM" , 15.7f );
 
 		VeiculoController controller =  new  VeiculoController();
 
@@ -59,9 +59,9 @@ public class Principal {
 
 	public  static  void  testeChamado () {
 
-		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , 'S' , " 13,9 km/l " );
+		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , "SIM" , 13.9f );
 		
-		Colaborador c1 =  new  Colaborador ( 1 , " Ada Lovelace " , " Rua dos Programadores - número 1010 " , " 045888555-74 " , " Gerente " , 15000.00 , " 48 95555-8888 " , 'S' );
+		Colaborador c1 =  new  Colaborador ( 1 , " Ada Lovelace " , " Rua dos Programadores - número 1010 " , " 045888555-74 " , " Gerente " , 15000.00 , " 48 95555-8888 " , "SIM" );
 
 		Chamado ch1 =  new  Chamado ( 1 , LocalDate . now(), " Rua das Acácias - número 35 " , 20.00 , c1, v1 );
 		

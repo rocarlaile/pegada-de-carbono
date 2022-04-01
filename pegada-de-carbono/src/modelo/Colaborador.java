@@ -10,11 +10,11 @@ public class Colaborador {
 	private String cargo;
 	private double salario;
 	private String telefone;
-	private char cnhB;
+	private String cnhB;
 	
 	
 	public  Colaborador ( int  id , String  nome , String  endereco , String cpf , String cargo , double salario , String telefone ,    
-			char  cnhB ) {
+			String  cnhB ) {
 		this.id = id;
 		this.nome = nome;
 		this.endereco = endereco;
@@ -102,12 +102,12 @@ public class Colaborador {
 	}
 
 
-	public  char  getCnhB () {
+	public  String  getCnhB () {
 		return cnhB;
 	}
 
 
-	public  void  setCnhB ( char  cnhB ) {
+	public  void  setCnhB ( String  cnhB ) {
 		this.cnhB = cnhB;
 	}
 	

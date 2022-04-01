@@ -45,13 +45,16 @@ public  class  ColaboradorDao {
 	
 	public  void  atualizar ( Colaborador  colaborador ) {
 		try {
-			String sql = "update colaborador set nome = ?, cpf = ?, endereco = ?, telefone = ? where id = ?";
+			String sql = "update colaborador set nome = ?, endereco = ?, cpf = ?, cargo = ?, salario = ?, telefone = ?, cnhB = ?, where id = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, colaborador.getNome());
 			pstmt.setString(2, colaborador.getEndereco());
 			pstmt.setString(3, colaborador.getCpf());
-			pstmt.setString(4, colaborador.getTelefone());
-			pstmt.setInt(5, colaborador.getId());
+			pstmt.setString(4, colaborador.getCargo());
+			pstmt.setDouble(5, colaborador.getSalario());
+			pstmt.setString(6, colaborador.getTelefone());
+			pstmt.setString(7, colaborador.getCnhB());
+			pstmt.setInt(8, colaborador.getId());
 			pstmt.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -62,7 +65,7 @@ public  class  ColaboradorDao {
 		try {
 			String sql = "delete from colaborador where id = ?";
 			PreparedStatement pstmt = con.prepareStatement(sql);
-			pstmt.setInt(idColaborador, idColaborador);
+			pstmt.setInt(1, idColaborador);
 			pstmt.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -82,7 +85,10 @@ public  class  ColaboradorDao {
 				c.setNome(rs.getString("nome"));
 				c.setEndereco(rs.getString("endereco"));
 				c.setCpf(rs.getString("cpf"));
+				c.setCargo(rs.getString("Cargo"));
+				c.setSalario(rs.getDouble("salario"));
 				c.setTelefone(rs.getString("Telefone"));
+				c.setCnhB(rs.getString("CnhB"));
 				listaColaborador.add(c);
 			}
 		} catch (SQLException e) {

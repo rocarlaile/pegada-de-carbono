@@ -5,10 +5,10 @@ public class Veiculo {
 	private  String placa;
 	private String modelo;
 	private int  ano;
-	private char veiculoDisponivel;
-	private  String consumoKmLitro;
+	private String veiculoDisponivel;
+	private  Float consumoKmLitro;
 	
-	public  Veiculo ( int  id , String  placa , String  modelo , int  ano , char  veiculoDisponivel , String  consumoKmLitro ) {
+	public  Veiculo ( int  id , String  placa , String  modelo , int  ano , String  veiculoDisponivel , Float  consumoKmLitro ) {
 		this.id = id;
 		this.placa = placa;
 		this.modelo = modelo;
@@ -52,22 +52,25 @@ public class Veiculo {
 		this.ano = ano;
 	}
 
-	public  char  getVeiculoDisponivel () {
+	public  String  getVeiculoDisponivel () {
 		return veiculoDisponivel;
 	}
 
-	public  void  setVeiculoDisponivel ( char  veiculoDisponivel ) {
+	public  void  setVeiculoDisponivel ( String  veiculoDisponivel ) {
 		this.veiculoDisponivel = veiculoDisponivel;
 	}
 
-	public  String  getConsumoKmLitro () {
+	public  Float  getConsumoKmLitro () {
 		return consumoKmLitro;
 	}
 
-	public  void  setConsumoKmLitro ( String  consumoKmLitro ) {
+	public  void  setConsumoKmLitro ( Float  consumoKmLitro ) {
 		this.consumoKmLitro = consumoKmLitro;
 	}
 
-	
+		
 }
+
+	
+
 
