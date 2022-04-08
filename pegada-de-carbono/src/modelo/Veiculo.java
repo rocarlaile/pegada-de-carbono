@@ -1,76 +1,83 @@
 package modelo;
 
-public class Veiculo {
-	private int id;
-	private  String placa;
-	private String modelo;
-	private int  ano;
-	private String veiculoDisponivel;
-	private  Float consumoKmLitro;
+  public class Veiculo {
+	 private int id;
+	 private String placa;
+	 private String modelo;
+	 private String ano;
+	 private String veiculoDisponivel ;
+	 private Double consumoKmLitro ;
 	
-	public  Veiculo ( int  id , String  placa , String  modelo , int  ano , String  veiculoDisponivel , Float  consumoKmLitro ) {
-		this.id = id;
-		this.placa = placa;
-		this.modelo = modelo;
-		this.ano = ano;
-		this.veiculoDisponivel = veiculoDisponivel;
-		this.consumoKmLitro = consumoKmLitro;
+	public   Veiculo ( int   id , String   placa , String   modelo , String   ano , String   veiculoDisponivel , Double   consumoKmLitro ) {
+		this.id = id ;
+		this.placa = placa ;
+		this.modelo = modelo ;
+		this.ano = ano ;
+		this.veiculoDisponivel = veiculoDisponivel ;
+		this.consumoKmLitro = consumoKmLitro ;
 	}
 	
-	public Veiculo(){
+	 public Veiculo (){
 	}
 
-	public  int  getId () {
-		return id;
+	public Veiculo(String placa2, String modelo2, int ano2, char veiculoDisponivel2, String consumo) {
+		// TODO Auto-generated constructor stub
 	}
 
-	public  void  setId ( int  id ) {
-		this.id = id;
+	public   int   getId () {
+		 return id;
 	}
 
-	public  String  getPlaca () {
-		return placa;
+	public   void   setId ( int   id ) {
+		this.id = id ;
 	}
 
-	public  void  setPlaca ( String  placa ) {
-		this.placa = placa;
+	public   String   getPlaca () {
+		return  placa ;
 	}
 
-	public  String  getModelo () {
-		return modelo;
+	public   void   setPlaca ( String   placa ) {
+		this.placa = placa ;
 	}
 
-	public  void  setModelo ( String  modelo ) {
-		this.modelo = modelo;
+	public   String   getModelo () {
+		 return modelo;
 	}
 
-	public  int  getAno () {
-		return ano;
+	public   void   setModelo ( String   modelo ) {
+		this.modelo = modelo ;
 	}
 
-	public  void  setAno ( int  ano ) {
-		this.ano = ano;
+	public   String   getAno () {
+		return  ano ;
 	}
 
-	public  String  getVeiculoDisponivel () {
-		return veiculoDisponivel;
+	public   void   setAno ( String  string) {
+		this.ano = string;
 	}
 
-	public  void  setVeiculoDisponivel ( String  veiculoDisponivel ) {
-		this.veiculoDisponivel = veiculoDisponivel;
+	public   String   getVeiculoDisponivel () {
+		return  veiculoDisponivel ;
 	}
 
-	public  Float  getConsumoKmLitro () {
-		return consumoKmLitro;
+	public   void   setVeiculoDisponivel ( String   veiculoDisponivel ) {
+		this.veiculoDisponivel = veiculoDisponivel ;
 	}
 
-	public  void  setConsumoKmLitro ( Float  consumoKmLitro ) {
-		this.consumoKmLitro = consumoKmLitro;
+	public   Double   getConsumoKmLitro () {
+		return consumoKmLitro ;
+	}
+
+	public   void   setConsumoKmLitro ( double  consumoKmLitro) {
+		this.consumoKmLitro = consumoKmLitro ;
+	}
+
+
+		
 	}
 
 		
-}
+
 
 	
-
 

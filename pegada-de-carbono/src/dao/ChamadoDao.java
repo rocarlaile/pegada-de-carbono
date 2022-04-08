@@ -13,6 +13,7 @@ public  class  ChamadoDao {
 
 	private static ChamadoDao instance;
 	private Connection con = ConnectionUtil.getConnection();
+	
 
 	public  static  ChamadoDao  getInstance () {
 		if (instance ==  null ) {
@@ -28,7 +29,7 @@ public  class  ChamadoDao {
 			
 			String sql = "insert into chamado (id, dataChamado, endereco, distanciaPercorrida, motorista, carro) values (?, ?, ?, ?, ?, ?)"; 
 		
-			PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			PreparedStatement pstmt = con.prepareStatement(null);
 		
 			pstmt.setInt(1, chamado.getId());
 			pstmt.setDate(2, java.sql.Date.valueOf(chamado.getDataChamado()));
@@ -37,13 +38,10 @@ public  class  ChamadoDao {
 			pstmt.setString(5, chamado.getColaborador().getNome());
 			pstmt.setString(6, chamado.getVeiculo().getPlaca());
 		
-			int key = pstmt.executeUpdate();
-			if (key > 0) {
-				ResultSet rs = pstmt.getGeneratedKeys();
-				rs.next();
-				rs.getInt(1);
-						
-					}
+		
+			pstmt.executeUpdate();
+			
+					 
 			} catch (SQLException e) {
 	e.printStackTrace();
 

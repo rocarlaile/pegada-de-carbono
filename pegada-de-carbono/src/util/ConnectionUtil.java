@@ -6,15 +6,15 @@ import java.sql.SQLException;
 
 public class ConnectionUtil {
 	
-	private static Connection con;
+	private static Connection conn;
 	public static Connection getConnection(){
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3312/pegada_carbono";
-			con = DriverManager.getConnection(url, "root", "");
-			con.setAutoCommit(true);
-			return con;
+			String url = "jdbc:mysql://localhost:3312/poo_pegadacarbono";
+			conn = DriverManager.getConnection(url, "root", "");
+			conn.setAutoCommit(true);
+			return conn;
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException se) {
@@ -26,7 +26,7 @@ public class ConnectionUtil {
 	
 	public static void closeConnection() {
 		try {
-			con.close();
+			conn.close();
 		} catch (SQLException ex) {
 			ex.printStackTrace();
 		}

@@ -1,4 +1,4 @@
-package modelo;
+ package modelo;
 
 
 
@@ -82,7 +82,7 @@ public class Colaborador {
 	}
 
 
-	public  double  getSalario () {
+	public  Double  getSalario () {
 		return salario;
 	}
 

@@ -1,34 +1,35 @@
 package controller;
 
-import  java.util.List ;
+import java.util.List;
 
-import  dao.ColaboradorDao;
+import dao.ColaboradorDao;
 import modelo.Colaborador;
 
-public  class  ColaboradorController {
+
+public   class   ColaboradorController {
 	
-	public  void  salvar ( Colaborador  colaborador ) throws  Exception {
-		if (colaborador.getNome() ==  null  || colaborador.getNome().length() <=  3 ) {
-			throw  new  Exception ( " Nome inválido! " );
+	public   void   salvar ( Colaborador   colaborador ) throws   Exception {
+		if ( colaborador . getNome () ==   null   || colaborador . getNome (). length () <=   3 ) {
+			throw   new   Exception ( "Nome inválido!" );
 		}
-		ColaboradorDao . getInstance() . salvar(colaborador);
+		ColaboradorDao.getInstance ().salvar ( colaborador );
 	}
 	
-	public  void  atualizar ( Colaborador  colaborador ) throws  Exception {
-		if (colaborador . getNome() ==  null  || colaborador.getNome().length() <=  3 ) {
-			throw  new  Exception ( " Nome inválido! " );
+	public   void   atualizar ( Colaborador   colaborador ) throws   Exception {
+		if ( colaborador . getNome () ==   null   || colaborador . getNome (). length () <=   3 ) {
+			throw   new   Exception ( "Nome inválido!" );
 		}
-		ColaboradorDao . getInstance().atualizar(colaborador);
+		ColaboradorDao.getInstance ().atualizar ( colaborador );
 	}
 	
-	public  void  excluir ( int idColaborador ) throws Exception {  
-		if (idColaborador ==  0 ) {
-			throw  new  Exception ( " Nenhum colaborador foi selecionado. Por favor, digite um id válido! " );
+	public   void   excluir ( int idColaborador ) throws Exception {    
+		if ( idColaborador ==   0 ) {
+			throw   new   Exception ( " Nenhum foi selecionado. Por favor, digite um colaborador um id válido!" );
 		}
-		ColaboradorDao.getInstance() . excluir(idColaborador);
+		ColaboradorDao.getInstance ().excluir ( idColaborador );
 	}
 	
-	public  List< Colaborador >  listar (){
-		return  ColaboradorDao . getInstance() . listar();
+	public   List < Colaborador >   listar (){
+		return   ColaboradorDao.getInstance ().listar ();
 	}
 }

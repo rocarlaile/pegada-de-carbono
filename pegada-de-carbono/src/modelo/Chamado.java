@@ -64,9 +64,15 @@ public class Chamado {
 	public  Veiculo  getVeiculo () {
 		return veiculo;
 	}
+	
 
 	public  void  setVeiculo ( Veiculo  veiculo ) {
 		this.veiculo = veiculo;
 	}
+	
+	public double calcularEmissaoCo2() {
+
+		return (this.distanciaPercorrida / veiculo.getConsumoKmLitro()) * 0.82 * 0.75 * 3.7;
 			
-}
+	}
+}	

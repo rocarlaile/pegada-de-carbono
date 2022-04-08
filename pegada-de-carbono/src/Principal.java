@@ -39,9 +39,9 @@ public class Principal {
 	}
 
 	public  static  void  testeVeiculo () {
-		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , "SIM" , 13.9f );
+		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla ", "2021", "SIM", 15.);
 		
-		Veiculo v2 =  new  Veiculo ( 2 , " OXM2754 " , " Chevrolet Onix " , 2021 , "SIM" , 15.7f );
+		Veiculo v2 =  new  Veiculo ( 2 , " OXM2754 " , " Chevrolet Onix " , "2021" , "SIM" , 12.);
 
 		VeiculoController controller =  new  VeiculoController();
 
@@ -59,7 +59,7 @@ public class Principal {
 
 	public  static  void  testeChamado () {
 
-		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla " , 2020 , "SIM" , 13.9f );
+		Veiculo v1 =  new  Veiculo ( 1 , " LSN4582 " , " Toyota Corolla ", "2021", "SIM", 15.);
 		
 		Colaborador c1 =  new  Colaborador ( 1 , " Ada Lovelace " , " Rua dos Programadores - número 1010 " , " 045888555-74 " , " Gerente " , 15000.00 , " 48 95555-8888 " , "SIM" );
 
